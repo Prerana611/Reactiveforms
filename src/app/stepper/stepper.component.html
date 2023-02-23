@@ -1,0 +1,154 @@
+<mat-horizontal-stepper labelPosition="bottom">
+  <mat-step [stepControl]="profileFormGroup">
+    <form [formGroup]="profileFormGroup">
+      <ng-template matStepLabel> Profile</ng-template>
+      <div id="msform">
+        <h2 class="fs-title text-center">Personal Details</h2>
+        <div>
+          <span style="margin-right: 44px">Name :</span>
+          <input
+            mat-input
+            pattern="[a-zA-Z ]*"
+            formControlName="name"
+            placeholder="Your Name"
+            required
+          />
+        </div>
+        <span style="margin-right: 44px">Email :</span>
+        <input
+          type="text"
+          formControlName="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+        <div>
+          <span style="margin-right: 20px">Mobile No :</span>
+          <input
+            type="text"
+            required
+            formControlName="phone"
+            name="phone"
+            placeholder="Phone"
+          />
+        </div>
+        <button
+          mat-raised-button
+          color="accent"
+          [disabled]="profileFormGroup.invalid"
+          matStepperNext
+          class="action-button btn btn-primary"
+        >
+          Next
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <form [formGroup]="adressFormGroup">
+      <ng-template matStepLabel>Address </ng-template>
+      <div id="msform">
+        <h2 class="fs-title">Address Details</h2>
+        <div>
+          <span style="margin-right: 44px">city :</span>
+          <input
+            type="text"
+            formControlName="city"
+            placeholder="City"
+            required
+          />
+        </div>
+        <div>
+          <span style="margin-right: 20px">Address :</span>
+          <input
+            type="text"
+            formControlName="address"
+            placeholder="Address"
+            required
+          />
+        </div>
+        <div>
+          <span style="margin-right: 20px">Pincode :</span>
+          <input
+            type="text"
+            formControlName="pincode"
+            placeholder="Pincode"
+            required
+          />
+        </div>
+        <button
+          mat-raised-button
+          color="accent"
+          matStepperPrevious
+          class="action-button"
+          style="margin-right: 20px"
+        >
+          Previous
+        </button>
+        <button
+          mat-raised-button
+          color="accent"
+          matStepperNext
+          [disabled]="adressFormGroup.invalid"
+          class="action-button"
+          style="padding-left: 30px; padding-right: 30px"
+        >
+          Next
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <form [formGroup]="educationFormGroup">
+      <ng-template matStepLabel>Education </ng-template>
+      <div id="msform">
+        <h2 class="fs-title">Education Details</h2>
+        <div>
+          <span style="margin-right: 20px">highest Qualification</span>
+          <input
+            type="text"
+            formControlName="highestQualification"
+            placeholder="highest Qualification"
+            required
+          />
+        </div>
+        <div>
+          <span style="margin-right: 72px">University :</span>
+          <input
+            type="text"
+            formControlName="University"
+            placeholder="University"
+            required
+          />
+        </div>
+        <div>
+          <span style="margin-right: 82px">CGPA :</span>
+          <input
+            type="text"
+            formControlName="CGPA"
+            placeholder="CGPA"
+            required
+          />
+        </div>
+        <button
+          mat-raised-button
+          color="accent"
+          matStepperPrevious
+          class="action-button"
+          style="margin-right: 20px"
+        >
+          Previous
+        </button>
+        <button
+          mat-raised-button
+          matStepperPrevious
+          [disabled]="educationFormGroup.invalid"
+          class="action-button"
+          style="background-color: green; color: white"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>

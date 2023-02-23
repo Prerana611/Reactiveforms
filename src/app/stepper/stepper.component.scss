@@ -1,0 +1,44 @@
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+    margin-left: 30px;
+    background: white;
+    border: 0 none;
+    border-radius: 0px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin:  8%;
+    position: relative;
+}
+#msform input, #msform textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 20px;
+    width: 70%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 18px;
+}
+#msform input:focus, #msform textarea:focus {
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #ee0979;
+    outline-width: 0;
+    transition: All 0.5s ease-in;
+    -webkit-transition: All 0.5s ease-in;
+    -moz-transition: All 0.5s ease-in;
+    -o-transition: All 0.5s ease-in;
+}
+#msform .action-button {
+    cursor: pointer;
+}
+::ng-deep .mat-horizontal-stepper-header-container {
+    max-width: 855px;
+    width: 555px;
+    margin-left: 350px;
+  }

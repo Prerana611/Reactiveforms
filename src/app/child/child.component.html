@@ -1,0 +1,93 @@
+<div class="card box">
+  <form [formGroup]="userform">
+    <div class="mt-5">
+      <div style="margin-bottom: 20px">
+        <!-- <span *ngIf="firstname.invalid && firstname.touched" class="error">*First name is required</span> -->
+        <span style="margin-right: 20px; margin-left: 10px">First Name :</span>
+        <input
+          type="text"
+          formControlName="firstname"
+          class="formControl"
+          placeholder="First Name"
+        />
+        <span style="margin-right: 20px; margin-left: 10px">Last Name :</span>
+        <input
+          type="text"
+          formControlName="lastname"
+          class="formControl"
+          placeholder="Last Name"
+        />
+      </div>
+      <mat-form-field>
+        <mat-label>Job Title </mat-label>
+        <mat-select name="job" formControlName="job">
+          <mat-option>None</mat-option>
+          <mat-option value="option1">Option 1</mat-option>
+          <mat-option value="option2">Option 2</mat-option>
+          <mat-option value="option3">Option 3</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <mat-radio-group
+          aria-label="Select an option"
+          name="radio"
+          formControlName="radio"
+        >
+          <mat-radio-button value="Fresher">Fresher</mat-radio-button>
+          <mat-radio-button value="Experianced">Experianced</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <button
+        type="button"
+        style="margin-left: 400px; margin-bottom: 10px; margin-top: 10px"
+        class="btn btn-primary"
+        (click)="reset()"
+      >
+        Reset
+      </button>
+      <button
+        type="submit"
+        style="margin-left: 10px; margin-bottom: 10px; margin-top: 10px"
+        class="btn btn-success"
+        [disabled]="userform.invalid"
+        (click)="login()"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+  <mat-table
+    [dataSource]="dataSource"
+    class="mat-elevation-z8"
+    style="margin-top: 20px"
+  >
+    <ng-container matColumnDef="firstname">
+      <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+      <mat-cell *matCellDef="let element of userdata">
+        {{ element.firstname }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lastname">
+      <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
+      <mat-cell *matCellDef="let element of userdata">
+        {{ element.lastname }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="job">
+      <mat-header-cell *matHeaderCellDef> Job Title </mat-header-cell>
+      <mat-cell *matCellDef="let element of userdata">
+        {{ element.job }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="radio">
+      <mat-header-cell *matHeaderCellDef> Role </mat-header-cell>
+      <mat-cell *matCellDef="let element of userdata">
+        {{ element.radio }}
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>
